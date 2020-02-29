@@ -1,0 +1,26 @@
+application:
+  #应用名称：当使用到微服务配置中心时，name必须和对应应用匹配
+  name: ams-ids-all
+
+server:
+  port: 10507
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    name: mysql
+    enable: true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.5.14:3306/pub_sys?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: apexsoft
+    initialSize: 1
+    maxActive: 3
+#    maxWait: 2999
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: true
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 100
+    connectionErrorRetryAttempts: 0
+    filters: stat,wall,log4j
